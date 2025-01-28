@@ -1,6 +1,6 @@
 // Basic operations overrided for the Galois Field 256 (2**8)
 // Uses pre-calculated tables for 0x11d primitive polynomial (x**8 + x**4 + x**3 + x**2 + 1)
-
+use bitcode::{Encode, Decode}
 use core::iter::{Product, Sum};
 use core::ops::{Add, Div, Mul, Sub};
 
@@ -64,7 +64,7 @@ const EXP_TABLE: [u8; 512] = [
     0x58, 0xb0, 0x7d, 0xfa, 0xe9, 0xcf, 0x83, 0x1b, 0x36, 0x6c, 0xd8, 0xad, 0x47, 0x8e, 0x01, 0x02,
 ];
 
-#[derive(Debug, PartialEq, Clone)]
+#[derive(Debug, PartialEq, Clone, Decode, Encode)]
 #[cfg_attr(feature = "fuzzing", derive(Arbitrary))]
 #[cfg_attr(feature = "zeroize_memory", derive(Zeroize))]
 #[cfg_attr(feature = "zeroize_memory", zeroize(drop))]
