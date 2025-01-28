@@ -1,6 +1,6 @@
 // Basic operations overrided for the Galois Field 256 (2**8)
 // Uses pre-calculated tables for 0x11d primitive polynomial (x**8 + x**4 + x**3 + x**2 + 1)
-use bitcode::{Encode, Decode}
+use bitcode::{Encode, Decode};
 use core::iter::{Product, Sum};
 use core::ops::{Add, Div, Mul, Sub};
 
